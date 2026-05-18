@@ -2,22 +2,6 @@
 
 Um motor de templates e interpretador de scripting desenvolvido em **Kotlin** utilizando **ANTLR4**. Este projeto foi desenhado para ler dados estruturados a partir de um ficheiro JSON e utilizá-los para renderizar dinamicamente lógica de programação (ciclos, condições e expressões matemáticas) embutida em ficheiros HTML.
 
----
-
-## 🗺️ Arquitetura do Projeto
-
-O pipeline do projeto segue a estrutura clássica do desenvolvimento de compiladores:
-
-[Template HTML] -> Regex Extraction -> [Script Text] -> ANTLR Lexer/Parser -> AST -> Interpreter -> [HTML Final]
-^
-[Input JSON] -> ANTLR Lexer/Parser -> AST ---|
-
-
-1. **Leitura do JSON:** O ficheiro de dados é validado por uma gramática dedicada e convertido numa Árvore de Sintaxe Abstrata (AST) própria.
-2. **Processamento do HTML:** Uma expressão regular localiza os blocos de script demarcados por `{{ ... }}`.
-3. **Análise Sintática & Execução:** O ANTLR analisa o código do script, gera a AST do template e o `Interpreter` executa a lógica em memória utilizando os dados extraídos do JSON, gerando a página web final.
-
----
 
 ## 🛠️ Tecnologias Utilizadas
 
