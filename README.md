@@ -1,20 +1,9 @@
-# 🚀 JSON & HTML Template Engine
+📝 Tutorial de Utilização
+1️⃣ Criar o ficheiro JSON
 
-Um motor de templates e interpretador de scripting desenvolvido em **Kotlin** utilizando **ANTLR4**. Este projeto foi desenhado para ler dados estruturados a partir de um ficheiro JSON e utilizá-los para renderizar dinamicamente lógica de programação (ciclos, condições e expressões matemáticas) embutida em ficheiros HTML.
+O ficheiro JSON contém os dados que serão utilizados no template.
 
-
-## 🛠️ Tecnologias Utilizadas
-
-* **Kotlin** (Linguagem principal)
-* **ANTLR v4** (Gerador de Lexers e Parsers)
-* **Gradle** (Gestor de dependências e automação de build)
-
----
-
-## 📝 Demonstração de Uso
-
-### 1. Ficheiro de Dados (`input.json`)
-```json
+input.json
 {
   "user": "Engenheiro",
   "notaMinima": 50,
@@ -24,13 +13,18 @@ Um motor de templates e interpretador de scripting desenvolvido em **Kotlin** ut
     "curso": "Engenharia"
   }
 }
-2. Ficheiro de Template (template.html)
-HTML
+2️⃣ Criar o Template HTML
+
+O template HTML pode conter blocos de scripting delimitados por {{ }}.
+
+template.html
 <html>
 <body>
+
     <h1>Olá, {{ print user }}!</h1>
 
-    <h2>Filtragem de Números (Maiores que 10)</h2>
+    <h2>Números Maiores que 10</h2>
+
     <ul>
     {{
     foreach number in numbers
@@ -41,47 +35,43 @@ HTML
     }}
     </ul>
 
-    <h2>Dados do Perfil</h2>
+    <h2>Perfil</h2>
+
     {{
     foreach info in perfil
         print info
     endforeach
     }}
+
 </body>
 </html>
-3. Ficheiro de Resultado (output.html)
-HTML
+3️⃣ Executar o Projeto
+
+Executar o seguinte comando no terminal:
+
+./gradlew run --args="template.html input.json output.html"
+4️⃣ Resultado Gerado
+
+O motor processa o template e gera automaticamente o HTML final.
+
+output.html
 <html>
 <body>
+
     <h1>Olá, Engenheiro!</h1>
 
-    <h2>Filtragem de Números (Maiores que 10)</h2>
+    <h2>Números Maiores que 10</h2>
+
     <ul>
     19
     12
     13
     </ul>
 
-    <h2>Dados do Perfil</h2>
+    <h2>Perfil</h2>
+
     23
     Engenharia
+
 </body>
 </html>
-⚙️ Características da Linguagem de Scripting
-A gramática desenvolvida suporta as seguintes operações dentro dos blocos {{ }}:
-
-Declaração e Atribuição: total = 0
-
-Expressões Matemáticas: Suporte a parentetização e precedência de operadores (+, -, *, /, %).
-
-Estruturas Condicionais: Blocos if (condicao) then ... else ... endif.
-
-Ciclos de Repetição: Iteração sobre Arrays e Sub-objetos JSON usando foreach item in colecao ... endforeach.
-
-Saída de Dados: Instrução print para injetar valores diretamente no documento HTML.
-
-🚀 Como Executar
-Para rodar o projeto localmente através do terminal, utiliza o comando do Gradle passando os caminhos do template, do JSON de entrada e do HTML de saída como argumentos:
-
-Bash
-./gradlew run --args="template.html input.json output.html"
