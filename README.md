@@ -1,4 +1,5 @@
 📝 Tutorial de Utilização
+
 1️⃣ Criar o ficheiro JSON
 
 O ficheiro JSON contém os dados que serão utilizados no template.
@@ -13,6 +14,7 @@ input.json
     "curso": "Engenharia"
   }
 }
+
 2️⃣ Criar o Template HTML
 
 O template HTML pode conter blocos de scripting delimitados por {{ }}.
@@ -45,11 +47,14 @@ template.html
 
 </body>
 </html>
+
 3️⃣ Executar o Projeto
 
 Executar o seguinte comando no terminal:
 
 ./gradlew run --args="template.html input.json output.html"
+
+
 4️⃣ Resultado Gerado
 
 O motor processa o template e gera automaticamente o HTML final.
