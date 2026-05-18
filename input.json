@@ -1,0 +1,14 @@
+{
+  "user": "Engenheiro",
+  "scores": [10, 20],
+  "names": ["Ana", "Bruno", "Carlos"],
+  "var": 1,
+  "varr": 3,
+  "notaMinima": 50,
+  "numbers": [5, 19, 12, 6, 0, 13],
+
+  "perfil": {
+    "idade": 23,
+    "curso": "Engenharia"
+  }
+}

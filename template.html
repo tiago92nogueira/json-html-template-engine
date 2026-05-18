@@ -1,0 +1,66 @@
+<html>
+<head><title>Teste ForEach e If</title></head>
+<body>
+
+<h1>Lista de scores do {{ print user }}</h1>
+{{ teste=var+varr }}
+<ul>
+    {{
+    foreach score in scores
+    print score
+    endforeach
+    }}
+</ul>
+
+<h2>Lista de nomes</h2>
+<ul>
+    {{
+    foreach name in names
+    print name
+    endforeach
+    }}
+</ul>
+
+<h2>Soma dos scores</h2>
+{{
+total = 0
+foreach score in scores
+total = total + score
+endforeach
+print total
+}}
+
+<h2>Estado do Aluno</h2>
+{{
+if (total >= notaMinima) then
+print "Aprovado!"
+else
+print "Reprovado. Tenta novamente."
+endif
+}}
+
+{{
+print teste
+print teste
+}}
+
+{{
+foreach number in numbers
+if (number > 10) then
+print number
+endif
+endforeach
+}}
+
+#OLA
+
+
+<h2>Dados do Perfil (Sub-Objeto)</h2>
+{{
+foreach info in perfil
+print info
+endforeach
+}}
+
+</body>
+</html>
